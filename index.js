@@ -45,7 +45,7 @@ function buildRecipeData() {
   }
 
   let recipe = {
-    title: name,
+    name: name,
     description: description,
     ingredients: ingredients
   }
