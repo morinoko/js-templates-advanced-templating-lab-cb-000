@@ -25,7 +25,10 @@ function renderRecipeForm() {
 }
 
 function handleSubmit() {
-  buildRecipeData();
+  let recipe = buildRecipeData();
+
+  // Recipe template
+  let recipeTemplate = Handlebars.compile(document.getElementById('').innerHTML);
 }
 
 function buildRecipeData() {
@@ -43,6 +46,6 @@ function buildRecipeData() {
     description: description,
     ingredients: ingredients
   }
-  
+
   return recipe;
 }
