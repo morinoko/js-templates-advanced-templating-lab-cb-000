@@ -11,7 +11,7 @@
     </main>
 
     <script id="recipe-form-template" type="text/x-handlebars-template">
-      <form id="recipe-form" onsubmit="handleSubmit();">
+      <form id="recipe-form" onsubmit="handleSubmit(); return false;">
         <div>
           <label for="name">Name of Recipe:</label><br>
           <input name="name" id="recipeName" type="text" />
