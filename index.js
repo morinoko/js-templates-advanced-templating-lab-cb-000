@@ -67,7 +67,8 @@ function displayEditForm() {
 
   let recipeFormHTML = buildRecipeForm();
   main.innerHTML += recipeFormHTML;
-
+  document.getElementById("recipeName").value = recipeName;
+  document.getElementById("recipeDescription").value = recipeDescription;
 
 
 
