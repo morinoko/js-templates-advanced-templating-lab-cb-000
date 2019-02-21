@@ -53,5 +53,19 @@ function buildRecipeData() {
 }
 
 function displayEditForm() {
+  let recipeName = document.getElementById("name").innerHTML;
+  let recipeDescription = document.getElementById('description').innerHTML;
+  let ingredientNodes = document.querySelectorAll('li[name="ingredients"]');
+  let ingredients = [];
 
+  for (let i = 0; i < ingredientNodes.length; i++) {
+    ingredients.push(ingredientNodes[i].innerHTML);
+  }
+  
+  let recipeFormHTML = buildRecipeForm();
+  
+  
+
+  
 }
+
