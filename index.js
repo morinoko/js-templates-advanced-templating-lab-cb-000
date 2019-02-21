@@ -1,7 +1,7 @@
 function init() {
   //put any page initialization/handlebars initialization here
   let main = document.getElementById('main');
-  
+
   // Set up recipe form
   let recipeFormHTML = buildRecipeForm();
   main.innerHTML += recipeFormHTML;
