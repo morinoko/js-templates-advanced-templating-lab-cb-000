@@ -30,10 +30,7 @@ function handleSubmit() {
   let recipeTemplate = Handlebars.compile(document.getElementById('recipe-template').innerHTML);
   let recipeHTML = recipeTemplate(recipe);
 
-  main.innerHTML += recipeHTML;
-
-  let recipeForm = document.getElementById('recipe-form');
-  recipeForm.remove();
+  main.innerHTML = recipeHTML;
 }
 
 function buildRecipeData() {
@@ -56,6 +53,7 @@ function buildRecipeData() {
 }
 
 function displayEditForm() {
+  // get data for form from current recipe
   let recipeName = document.getElementById("name").innerHTML;
   let recipeDescription = document.getElementById('description').innerHTML;
   let ingredientNodes = document.querySelectorAll('li[name="ingredients"]');
@@ -65,11 +63,12 @@ function displayEditForm() {
     ingredients.push(ingredientNodes[i].innerHTML);
   }
 
+  // add the recipe form
   let recipeFormHTML = buildRecipeForm();
   let recipe = document.getElementById('recipe')
   main.innerHTML += recipeFormHTML;
 
-  // Fill form
+  // Fill the form
   document.getElementById("recipeName").value = recipeName;
   document.getElementById("recipeDescription").value = recipeDescription;
 
