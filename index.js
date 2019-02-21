@@ -28,7 +28,7 @@ function handleSubmit() {
   let recipe = buildRecipeData();
 
   // Recipe template
-  let recipeTemplate = Handlebars.compile(document.getElementById('').innerHTML);
+  let recipeTemplate = Handlebars.compile(document.getElementById('recipe-template').innerHTML);
 }
 
 function buildRecipeData() {
