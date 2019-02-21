@@ -99,7 +99,7 @@ describe('Handlebars Templates Lab', function() {
       it('renders the form template with values pre-filled', function() {
         // load the new form and fill it out
         init()
-        var ingredients = document.getElementsByName("ingredients")
+        var ingredients = document.querySelectorAll("input[name='ingredients']")
         var nameField = document.getElementById("name")
         var descriptionField = document.getElementById("description")
         var ingredientsValues = ["Apple", "Pear", "Orange", "Banana", "Almond Milk"]
