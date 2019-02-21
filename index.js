@@ -2,7 +2,8 @@ function init() {
   //put any page initialization/handlebars initialization here
 
   // Set up recipe form
-  renderRecipeForm();
+  let recipeFormHTML = buildRecipeForm();
+  main.innerHTML += recipeFormHTML;
 
   // Register partials
   Handlebars.registerPartial('recipeDetailsPartial', document.getElementById("recipe-details-partial").innerHTML);
@@ -16,12 +17,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   init()
 })
 
-function renderRecipeForm() {
+function buildRecipeForm() {
   let main = document.getElementById('main');
   let recipeFormTemplate = Handlebars.compile(document.getElementById('recipe-form-template').innerHTML);
-  let recipeFormHTML = recipeFormTemplate();
-
-  main.innerHTML += recipeFormHTML;
+  return recipeFormTemplate();
 }
 
 function handleSubmit() {
