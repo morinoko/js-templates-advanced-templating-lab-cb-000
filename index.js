@@ -8,8 +8,8 @@ function init() {
   Handlebars.registerPartial('recipeDetailsPartial', document.getElementById("recipe-details-partial").innerHTML);
 
   // Register helpers
-  Handlebars.registerHelper('displayIngredient', function() {
-    return new Handlebars.SafeString('<li name="ingredients">' + this + '</li>');
+  Handlebars.registerHelper('displayIngredient', function(ingredient) {
+    return new Handlebars.SafeString('<li name="ingredients">' + ingredient + '</li>');
   });
 }
 document.addEventListener("DOMContentLoaded", function(event) {
