@@ -35,8 +35,8 @@ function handleSubmit() {
 }
 
 function buildRecipeData() {
-  let title = document.getElementById("name").value;
-  let description = document.getElementById("description").value;
+  let title = document.getElementById("recipeName").value;
+  let description = document.getElementById("recipeDescription").value;
   let ingredientNodes = document.getElementsByName("ingredients");
   let ingredients = [];
 
