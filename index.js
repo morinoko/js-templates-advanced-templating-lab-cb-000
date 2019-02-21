@@ -30,6 +30,8 @@ function handleSubmit() {
   // Recipe template
   let recipeTemplate = Handlebars.compile(document.getElementById('recipe-template').innerHTML);
   let recipeHTML = recipeTemplate(recipe);
+
+  main.innerHTML += recipeHTML;
 }
 
 function buildRecipeData() {
