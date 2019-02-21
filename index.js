@@ -72,7 +72,10 @@ function displayEditForm() {
   document.getElementById("recipeName").value = recipeName;
   document.getElementById("recipeDescription").value = recipeDescription;
 
+  let ingredientInputs = document.querySelectorAll('input[name="ingredients"]');
 
-
-
+  function insertIngredientValue(ingredient, index, array) {
+    ingredientInputs[index].value = ingrededient;
+  }
+  ingredients.forEach(insertIngredientValue);
 }
