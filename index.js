@@ -63,7 +63,7 @@ function displayEditForm() {
   }
 
   let recipeFormHTML = buildRecipeForm();
-
+  main.innerHTML += recipeFormHTML;
 
 
 
