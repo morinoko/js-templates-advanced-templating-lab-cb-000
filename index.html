@@ -42,7 +42,9 @@
       <div id="description">{{ description }}</div>
       <ul>
         {{#each ingredients}}
-          {{displayIngredient this}}
+          {{#if this}}
+            {{displayIngredient this}}
+          {{/if}}
         {{/each}}
       </ul>
     </script>
