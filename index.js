@@ -66,7 +66,7 @@ function displayEditForm() {
   // add the recipe form
   let recipeFormHTML = buildRecipeForm();
   let recipe = document.getElementById('recipe')
-  main.innerHTML += recipeFormHTML;
+  main.innerHTML = recipeFormHTML;
 
   // Fill the form
   document.getElementById("recipeName").value = recipeName;
