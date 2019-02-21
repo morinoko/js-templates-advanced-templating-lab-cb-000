@@ -100,8 +100,8 @@ describe('Handlebars Templates Lab', function() {
         // load the new form and fill it out
         init()
         var ingredients = document.querySelectorAll("input[name='ingredients']")
-        var nameField = document.getElementById("name")
-        var descriptionField = document.getElementById("description")
+        var nameField = document.getElementById("recipeName")
+        var descriptionField = document.getElementById("recipeDescription")
         var ingredientsValues = ["Apple", "Pear", "Orange", "Banana", "Almond Milk"]
         ingredientsValues.forEach(function(ing, index){
           ingredients[index].value = ing;
