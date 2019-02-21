@@ -116,7 +116,7 @@ describe('Handlebars Templates Lab', function() {
         expect(spy).toHaveBeenCalledWith(document.getElementById("recipe-form-template").innerHTML)
         spy.reset()
         // the form should be pre-filled with previous values
-        ingredients = document.getElementsByName("ingredients")
+        ingredients = document.querySelectorAll("input[name='ingredients']")
         nameField = document.getElementById("recipeName")
         descriptionField = document.getElementById("recipeDescription")
         expect(nameField.value).toEqual("Fruit Salad", "Got: '" + nameField.value + "' Expected 'Fruit Salad' Make sure that the name field is pre-filled in the edit form")
