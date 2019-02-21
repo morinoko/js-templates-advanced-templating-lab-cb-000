@@ -64,7 +64,7 @@ function displayEditForm() {
   for (let i = 0; i < ingredientNodes.length; i++) {
     ingredients.push(ingredientNodes[i].innerHTML);
   }
-  
+
   let recipeFormHTML = buildRecipeForm();
   let recipe = document.getElementById('recipe')
   main.innerHTML += recipeFormHTML;
