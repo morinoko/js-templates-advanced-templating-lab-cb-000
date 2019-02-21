@@ -137,7 +137,7 @@ describe('Handlebars Templates Lab', function() {
         expect(document.getElementById('name').innerHTML).toMatch("Fruity Fruit Salad")
         expect(document.getElementById('description')).toExist
         expect(document.getElementById('description').innerHTML).toMatch("Yummiest fruit salad")
-        ingredients = document.getElementsByName("ingredients")
+        ingredients = document.querySelectorAll("li[name='ingredients']")
         ingredientsValues.forEach(function(ing, index){
           expect(ingredients[index].innerHTML).toEqual(ing)
         })
