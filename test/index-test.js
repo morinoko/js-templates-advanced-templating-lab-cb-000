@@ -8,8 +8,8 @@ describe('Handlebars Templates Lab', function() {
       var recipeForm = document.getElementById("recipe-form")
       expect(recipeForm).toExist("Must provide a form with an id of 'recipe-form'")
       expect(recipeForm).toMatch(/onsubmit="handleSubmit()"/)
-      var nameField = document.getElementById("name")
-      var descriptionField = document.getElementById("description")
+      var nameField = document.getElementById("recipeName")
+      var descriptionField = document.getElementById("recipeDescription")
       expect(nameField).toExist()
       expect(descriptionField).toExist()
       var ingredients = document.getElementsByName("ingredients")
@@ -69,9 +69,9 @@ describe('Handlebars Templates Lab', function() {
       it('renders the recipe template', function() {
         // load the new recipe form and fill it out
         init()
-        var ingredients = document.getElementsByName("ingredients")
-        var nameField = document.getElementById("name")
-        var descriptionField = document.getElementById("description")
+        var ingredients = document.querySelectorAll("input[name='ingredients']")
+        var nameField = document.getElementById("recipeName")
+        var descriptionField = document.getElementById("recipeDescription")
         var ingredientsValues = ["Apple", "Pear", "Orange", "Banana", "Almond Milk"]
         ingredientsValues.forEach(function(ing, index){
           ingredients[index].value = ing;
@@ -88,7 +88,7 @@ describe('Handlebars Templates Lab', function() {
         expect(document.getElementById('name').innerHTML).toMatch("Fruit Salad")
         expect(document.getElementById('description')).toExist
         expect(document.getElementById('description').innerHTML).toMatch("Yummy fruit salad")
-        ingredients = document.getElementsByName("ingredients")
+        ingredients = document.querySelectorAll("li[name='ingredients']")
         ingredientsValues.forEach(function(ing, index){
           expect(ingredients[index].innerHTML).toEqual(ing)
         })
@@ -98,10 +98,10 @@ describe('Handlebars Templates Lab', function() {
     describe('displayEditForm', function() {
       it('renders the form template with values pre-filled', function() {
         // load the new form and fill it out
-        init() 
-        var ingredients = document.getElementsByName("ingredients")
-        var nameField = document.getElementById("name")
-        var descriptionField = document.getElementById("description")
+        init()
+        var ingredients = document.querySelectorAll("input[name='ingredients']")
+        var nameField = document.getElementById("recipeName")
+        var descriptionField = document.getElementById("recipeDescription")
         var ingredientsValues = ["Apple", "Pear", "Orange", "Banana", "Almond Milk"]
         ingredientsValues.forEach(function(ing, index){
           ingredients[index].value = ing;
@@ -112,13 +112,13 @@ describe('Handlebars Templates Lab', function() {
         handleSubmit()
         var spy = expect.spyOn(window.Handlebars, "compile").andCallThrough()
         // simulate clicking the link to edit
-        displayEditForm() 
+        displayEditForm()
         expect(spy).toHaveBeenCalledWith(document.getElementById("recipe-form-template").innerHTML)
         spy.reset()
         // the form should be pre-filled with previous values
-        ingredients = document.getElementsByName("ingredients")
-        nameField = document.getElementById("name")
-        descriptionField = document.getElementById("description")
+        ingredients = document.querySelectorAll("input[name='ingredients']")
+        nameField = document.getElementById("recipeName")
+        descriptionField = document.getElementById("recipeDescription")
         expect(nameField.value).toEqual("Fruit Salad", "Got: '" + nameField.value + "' Expected 'Fruit Salad' Make sure that the name field is pre-filled in the edit form")
         expect(descriptionField.value).toEqual("Yummy fruit salad", "Got: '" + descriptionField.value + "' Expected: 'Yummy fruit salad' Make sure that the description field is pre-filled in the edit form")
         ingredientsValues.forEach(function(ing, index){
@@ -137,7 +137,7 @@ describe('Handlebars Templates Lab', function() {
         expect(document.getElementById('name').innerHTML).toMatch("Fruity Fruit Salad")
         expect(document.getElementById('description')).toExist
         expect(document.getElementById('description').innerHTML).toMatch("Yummiest fruit salad")
-        ingredients = document.getElementsByName("ingredients")
+        ingredients = document.querySelectorAll("li[name='ingredients']")
         ingredientsValues.forEach(function(ing, index){
           expect(ingredients[index].innerHTML).toEqual(ing)
         })
