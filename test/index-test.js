@@ -69,7 +69,7 @@ describe('Handlebars Templates Lab', function() {
       it('renders the recipe template', function() {
         // load the new recipe form and fill it out
         init()
-        var ingredients = document.getElementsByName("ingredients")
+        var ingredients = document.querySelectorAll("input[name='ingredients']")
         var nameField = document.getElementById("recipeName")
         var descriptionField = document.getElementById("recipeDescription")
         var ingredientsValues = ["Apple", "Pear", "Orange", "Banana", "Almond Milk"]
