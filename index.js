@@ -31,6 +31,9 @@ function handleSubmit() {
   let recipeHTML = recipeTemplate(recipe);
 
   main.innerHTML += recipeHTML;
+
+  let recipeForm = document.getElementById('recipe-form');
+  recipeForm.remove();
 }
 
 function buildRecipeData() {
@@ -64,6 +67,8 @@ function displayEditForm() {
 
   let recipeFormHTML = buildRecipeForm();
   main.innerHTML += recipeFormHTML;
+
+  
 
 
 
