@@ -1,6 +1,7 @@
 function init() {
   //put any page initialization/handlebars initialization here
-
+  let main = document.getElementById('main');
+  
   // Set up recipe form
   let recipeFormHTML = buildRecipeForm();
   main.innerHTML += recipeFormHTML;
@@ -18,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 })
 
 function buildRecipeForm() {
-  let main = document.getElementById('main');
   let recipeFormTemplate = Handlebars.compile(document.getElementById('recipe-form-template').innerHTML);
   return recipeFormTemplate();
 }
