@@ -53,5 +53,5 @@ function buildRecipeData() {
 }
 
 function displayEditForm() {
-  
+
 }
